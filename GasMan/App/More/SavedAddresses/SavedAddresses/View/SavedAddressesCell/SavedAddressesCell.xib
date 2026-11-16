@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="148" id="KGk-i7-Jjw" customClass="SavedAddressesCell" customModule="GasMan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="482" height="148"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="482" height="148"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zZh-e1-f0D" userLabel="ContainerStackView">
+                        <rect key="frame" x="0.0" y="8" width="482" height="132"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aoa-Rg-TsS" userLabel="ActionsStackView">
+                                <rect key="frame" x="8" y="8" width="466" height="25"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jz6-UX-8RY" userLabel="nameLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" name="hintColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxH-YJ-ChE" userLabel="deleteButton">
+                                        <rect key="frame" x="408" y="0.0" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="TSB-cQ-ePT"/>
+                                            <constraint firstAttribute="width" secondItem="PxH-YJ-ChE" secondAttribute="height" multiplier="1:1" id="xNw-We-8J7"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="deleteBtn"/>
+                                        <connections>
+                                            <action selector="didTapDelete:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yXz-09-W0s"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivt-b4-3Wp" userLabel="updateButton">
+                                        <rect key="frame" x="441" y="0.0" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="Mm6-Gc-Y4Q"/>
+                                            <constraint firstAttribute="width" secondItem="Ivt-b4-3Wp" secondAttribute="height" multiplier="1:1" id="ZZ6-H5-lzp"/>
+                                            <constraint firstAttribute="width" secondItem="Ivt-b4-3Wp" secondAttribute="height" multiplier="1:1" id="h3v-bR-PrE"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="updateBtn"/>
+                                        <connections>
+                                            <action selector="didTapUpdate:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zMm-Bq-9Ut"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5u6-J4-APL" userLabel="streetLabel">
+                                <rect key="frame" x="8" y="41" width="466" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="hintColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rqo-bk-kyN" userLabel="AddressDescStackView">
+                                <rect key="frame" x="8" y="108" width="466" height="16"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location-06" translatesAutoresizingMaskIntoConstraints="NO" id="np6-3H-NIF">
+                                        <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="iTL-Yy-iKP"/>
+                                            <constraint firstAttribute="width" secondItem="np6-3H-NIF" secondAttribute="height" multiplier="1:1" id="xoI-lh-evW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGj-qK-bNh" userLabel="addressDescLabel">
+                                        <rect key="frame" x="24" y="0.0" width="442" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" name="hintColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="rtCornerRadius">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="rtBorderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="rtBorderColor">
+                                <color key="value" name="TextFieldBorder"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="zZh-e1-f0D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="3OO-0g-L4f"/>
+                    <constraint firstItem="zZh-e1-f0D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="N1s-RJ-Lgj"/>
+                    <constraint firstAttribute="trailing" secondItem="zZh-e1-f0D" secondAttribute="trailing" id="OX8-fO-C7x"/>
+                    <constraint firstAttribute="bottom" secondItem="zZh-e1-f0D" secondAttribute="bottom" constant="8" id="Zyp-QZ-QlA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addressDescLabel" destination="KGj-qK-bNh" id="6ZH-Jr-9qV"/>
+                <outlet property="containerStackView" destination="zZh-e1-f0D" id="kDL-uM-Xyv"/>
+                <outlet property="deleteButton" destination="PxH-YJ-ChE" id="x69-Cv-vEN"/>
+                <outlet property="nameLabel" destination="jz6-UX-8RY" id="uKK-9h-fRd"/>
+                <outlet property="streetLabel" destination="5u6-J4-APL" id="0bk-u1-vS2"/>
+                <outlet property="updateButton" destination="Ivt-b4-3Wp" id="Zig-db-aLH"/>
+            </connections>
+            <point key="canvasLocation" x="125.19083969465649" y="163.38028169014086"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="deleteBtn" width="25.333333969116211" height="25.333333969116211"/>
+        <image name="location-06" width="16" height="16"/>
+        <image name="updateBtn" width="25.333333969116211" height="25.333333969116211"/>
+        <namedColor name="TextFieldBorder">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="hintColor">
+            <color red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

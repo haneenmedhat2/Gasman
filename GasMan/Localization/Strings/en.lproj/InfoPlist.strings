@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+
+ Created by MGAbouarab®
+  
+*/
+
+"CFBundleDisplayName" = "GasMan";
+"NSCameraUsageDescription" = "GasMan uses the camera so you can take and attach photos to your orders and profile.";
+"NSLocationWhenInUseUsageDescription" = "GasMan uses your location while you use the app to help you select an accurate delivery address.";
+"NSPhotoLibraryUsageDescription" = "GasMan accesses your photo library so you can select and attach photos to your orders and profile.";
+"NSMicrophoneUsageDescription" = "GasMan uses the microphone so you can record and send voice messages in chat.";

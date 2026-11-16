@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DriverInfoView" customModule="GasMan" customModuleProvider="target">
+            <connections>
+                <outlet property="nameLabel" destination="DIV-name" id="DIV-name-conn"/>
+                <outlet property="phoneLabel" destination="DIV-phone" id="DIV-phone-conn"/>
+                <outlet property="plateNumLabel" destination="Mjt-bA-vhN" id="zug-tq-Fqm"/>
+                <outlet property="profileImageView" destination="DIV-avatar" id="DIV-avatar-conn"/>
+                <outlet property="vehicleTypeLabel" destination="fau-iJ-rgX" id="Zjd-g5-dOt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="DIV-root">
+            <rect key="frame" x="0.0" y="0.0" width="639" height="305"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIV-card">
+                    <rect key="frame" x="0.0" y="0.0" width="639" height="305"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="DIV-hstack">
+                            <rect key="frame" x="12" y="16" width="615" height="273"/>
+                            <subviews>
+                                <imageView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIV-avatar" userLabel="ProfileImage">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="DIV-av-h"/>
+                                        <constraint firstAttribute="width" constant="32" id="DIV-av-w"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DIV-vstack">
+                                    <rect key="frame" x="44" y="0.0" width="571" height="176"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIV-name" userLabel="NameLabel">
+                                            <rect key="frame" x="0.0" y="0.0" width="571" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" name="hintColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="176.66666666666666" placeholderIntrinsicHeight="32" translatesAutoresizingMaskIntoConstraints="NO" id="Xud-0W-VDD" userLabel="PhoneView">
+                                            <rect key="frame" x="0.0" y="60" width="571" height="32"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FZn-tg-cwj" userLabel="PhoneStackView">
+                                                    <rect key="frame" x="8" y="8" width="555" height="16"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smart-phone-03" translatesAutoresizingMaskIntoConstraints="NO" id="IRf-Ow-ZKn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="16" id="6Zt-v1-fdS"/>
+                                                                <constraint firstAttribute="height" constant="16" id="zeR-d7-XaU"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIV-phone" userLabel="PhoneLabel">
+                                                            <rect key="frame" x="24" y="0.0" width="531" height="16"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" name="hintColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="TextFieldBackground"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="FZn-tg-cwj" secondAttribute="bottom" constant="8" id="GSw-hF-eNK"/>
+                                                <constraint firstAttribute="trailing" secondItem="FZn-tg-cwj" secondAttribute="trailing" constant="8" id="NPK-UI-2AI"/>
+                                                <constraint firstItem="FZn-tg-cwj" firstAttribute="top" secondItem="Xud-0W-VDD" secondAttribute="top" constant="8" id="rF8-Ze-ecZ"/>
+                                                <constraint firstItem="FZn-tg-cwj" firstAttribute="leading" secondItem="Xud-0W-VDD" secondAttribute="leading" constant="8" id="uP9-j1-DI7"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="rtCornerRadius">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="176.66666666666666" placeholderIntrinsicHeight="32" translatesAutoresizingMaskIntoConstraints="NO" id="YhX-VO-quC" userLabel="PlateNumberView">
+                                            <rect key="frame" x="0.0" y="102" width="176.66666666666666" height="32"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="grr-Wk-5E0" userLabel="PlateNumStackView">
+                                                    <rect key="frame" x="8" y="8" width="160.66666666666666" height="16"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car-01" translatesAutoresizingMaskIntoConstraints="NO" id="RgZ-fg-6Nf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="16" id="cnM-1j-QAL"/>
+                                                                <constraint firstAttribute="height" constant="16" id="p6y-20-nqF"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hifioehgerpghe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjt-bA-vhN" userLabel="plateNumLabel">
+                                                            <rect key="frame" x="24" y="0.0" width="136.66666666666666" height="16"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" name="hintColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="TextFieldBackground"/>
+                                            <constraints>
+                                                <constraint firstItem="grr-Wk-5E0" firstAttribute="top" secondItem="YhX-VO-quC" secondAttribute="top" constant="8" id="Zje-vd-MKX"/>
+                                                <constraint firstAttribute="bottom" secondItem="grr-Wk-5E0" secondAttribute="bottom" constant="8" id="aRm-qJ-leE"/>
+                                                <constraint firstAttribute="trailing" secondItem="grr-Wk-5E0" secondAttribute="trailing" constant="8" id="lHP-jA-XMV"/>
+                                                <constraint firstItem="grr-Wk-5E0" firstAttribute="leading" secondItem="YhX-VO-quC" secondAttribute="leading" constant="8" id="qjz-MT-dCC"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="rtCornerRadius">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="176.66666666666666" placeholderIntrinsicHeight="32" translatesAutoresizingMaskIntoConstraints="NO" id="XGj-NN-OGB" userLabel="VehicleTypeView">
+                                            <rect key="frame" x="0.0" y="144" width="321" height="32"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="apQ-mx-wTu" userLabel="VehicleTypeStackView">
+                                                    <rect key="frame" x="8" y="8" width="305" height="16"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car-03" translatesAutoresizingMaskIntoConstraints="NO" id="vi8-NR-IMt">
+                                                            <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="16" id="k0d-5d-oiQ"/>
+                                                                <constraint firstAttribute="height" constant="16" id="ycC-Yk-3Oe"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="uigoigi idghvoisdgvdislvijdsophvsobhfoidbh" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fau-iJ-rgX" userLabel="vehicleTypeLabel">
+                                                            <rect key="frame" x="24" y="0.0" width="281" height="16"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" name="hintColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="TextFieldBackground"/>
+                                            <constraints>
+                                                <constraint firstItem="apQ-mx-wTu" firstAttribute="top" secondItem="XGj-NN-OGB" secondAttribute="top" constant="8" id="GeT-wb-mYg"/>
+                                                <constraint firstItem="apQ-mx-wTu" firstAttribute="leading" secondItem="XGj-NN-OGB" secondAttribute="leading" constant="8" id="Lsx-lV-maA"/>
+                                                <constraint firstAttribute="bottom" secondItem="apQ-mx-wTu" secondAttribute="bottom" constant="8" id="eNx-8r-4Fg"/>
+                                                <constraint firstAttribute="trailing" secondItem="apQ-mx-wTu" secondAttribute="trailing" constant="8" id="xTe-DY-c4f"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="rtCornerRadius">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="DIV-hstack" secondAttribute="bottom" constant="16" id="DIV-h-bot"/>
+                        <constraint firstItem="DIV-hstack" firstAttribute="leading" secondItem="DIV-card" secondAttribute="leading" constant="12" id="DIV-h-lead"/>
+                        <constraint firstItem="DIV-hstack" firstAttribute="top" secondItem="DIV-card" secondAttribute="top" constant="16" id="DIV-h-top"/>
+                        <constraint firstAttribute="trailing" secondItem="DIV-hstack" secondAttribute="trailing" constant="12" id="DIV-h-trail"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="whiteColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="DIV-card" secondAttribute="bottom" id="DIV-c-bot"/>
+                <constraint firstItem="DIV-card" firstAttribute="leading" secondItem="DIV-root" secondAttribute="leading" id="DIV-c-lead"/>
+                <constraint firstItem="DIV-card" firstAttribute="top" secondItem="DIV-root" secondAttribute="top" id="DIV-c-top"/>
+                <constraint firstAttribute="trailing" secondItem="DIV-card" secondAttribute="trailing" id="DIV-c-trail"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="rtCornerRadius">
+                    <real key="value" value="12"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="rtBorderWidth">
+                    <real key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="rtBorderColor">
+                    <color key="value" name="TextFieldBorder"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="20.610687022900763" y="-172.18309859154931"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="car-01" width="15" height="15"/>
+        <image name="car-03" width="15" height="15"/>
+        <image name="smart-phone-03" width="15" height="15"/>
+        <namedColor name="TextFieldBackground">
+            <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextFieldBorder">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="hintColor">
+            <color red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

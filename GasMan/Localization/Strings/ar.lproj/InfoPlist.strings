@@ -1,0 +1,13 @@
+/* 
+  InfoPlist.strings
+
+ Created by MGAbouarab®
+  
+*/
+
+
+"CFBundleDisplayName" = "غاز مان";
+"NSCameraUsageDescription" = "يستخدم غاز مان الكاميرا لتتمكن من التقاط الصور وإرفاقها بطلباتك وملفك الشخصي.";
+"NSLocationWhenInUseUsageDescription" = "يستخدم غاز مان موقعك أثناء استخدام التطبيق لمساعدتك في تحديد عنوان توصيل دقيق.";
+"NSPhotoLibraryUsageDescription" = "يصل غاز مان إلى مكتبة الصور لتتمكن من اختيار الصور وإرفاقها بطلباتك وملفك الشخصي.";
+"NSMicrophoneUsageDescription" = "يستخدم غاز مان الميكروفون لتتمكن من تسجيل الرسائل الصوتية وإرسالها في المحادثة.";

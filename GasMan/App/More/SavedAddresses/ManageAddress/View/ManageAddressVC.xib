@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ManageAddressVC" customModule="GasMan" customModuleProvider="target">
+            <connections>
+                <outlet property="addressLabel" destination="SuO-Ji-uRH" id="DXG-Um-rOH"/>
+                <outlet property="addressTextField" destination="bXz-t7-82L" id="vU5-2d-iRa"/>
+                <outlet property="buildingNumTextField" destination="zvK-Tf-Njx" id="ciB-tL-bl5"/>
+                <outlet property="cityTextField" destination="pla-Ab-GUD" id="xzR-2J-8zw"/>
+                <outlet property="confirmButton" destination="NsL-Uo-QdG" id="RnE-wG-vdK"/>
+                <outlet property="mapview" destination="Ab9-Cr-9oe" id="TD8-1N-W3q"/>
+                <outlet property="streetTextField" destination="SyF-TA-Rlu" id="xMy-z9-hzX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ex7-44-HY2">
+                    <rect key="frame" x="0.0" y="118" width="393" height="734"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ab9-Cr-9oe" userLabel="MapView" customClass="GMSMapView">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="734"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOY-VX-x9L" userLabel="currentLocationBtn">
+                            <rect key="frame" x="347" y="-496" width="30" height="30"/>
+                            <color key="backgroundColor" name="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="fBe-Nf-ruV"/>
+                                <constraint firstAttribute="height" constant="30" id="shd-XW-haZ"/>
+                            </constraints>
+                            <color key="tintColor" name="Main"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="location" catalog="system"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="rtCornerRadius">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didTapCurrentLocation:" destination="-1" eventType="touchUpInside" id="RHS-ee-S6P"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="328" translatesAutoresizingMaskIntoConstraints="NO" id="2A1-AD-tqc" userLabel="LocationView">
+                            <rect key="frame" x="0.0" y="-458" width="393" height="1192"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4wb-iW-XkZ" userLabel="ContainerStackView">
+                                    <rect key="frame" x="16" y="16" width="361" height="1160"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aIP-7I-eZ9" userLabel="AddressLabelStackView">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="16"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yqs-kk-kjx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location-06" translatesAutoresizingMaskIntoConstraints="NO" id="8uD-Ub-2aD">
+                                                            <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="16" id="la3-sO-nrz"/>
+                                                                <constraint firstAttribute="height" constant="16" id="ujf-eY-mfr"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading address..." textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuO-Ji-uRH">
+                                                    <rect key="frame" x="24" y="0.0" width="337" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Loading address..."/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="knK-oh-CiE" userLabel="TextFieldsStack View">
+                                            <rect key="frame" x="0.0" y="24" width="361" height="1084"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXz-t7-82L" userLabel="addressTextField" customClass="GeneralTextField" customModule="GasMan" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="268"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRequiredProperty" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeHolderTxt" value="address_name"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isTopStackHidden" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pla-Ab-GUD" userLabel="cityTextField" customClass="PickerFieldView" customModule="GasMan" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="272" width="361" height="268"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRequiredProperty" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeHolderTxt" value="city"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isTopStackHidden" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SyF-TA-Rlu" userLabel="streetTextField" customClass="GeneralTextField" customModule="GasMan" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="544" width="361" height="268"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRequiredProperty" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeHolderTxt" value="street_name"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isTopStackHidden" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvK-Tf-Njx" userLabel="buildingNumTextField" customClass="GeneralTextField" customModule="GasMan" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="816" width="361" height="268"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRequiredProperty" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeHolderTxt" value="building_number"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isTopStackHidden" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NsL-Uo-QdG" userLabel="confirmButton" customClass="MainButton" customModule="GasMan" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="1116" width="361" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="gcG-tN-Pq8"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="confirm_address"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="didTapConfirm:" destination="-1" eventType="touchUpInside" id="Y4D-81-jMK"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" name="TextFieldBorder"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="4wb-iW-XkZ" secondAttribute="trailing" constant="16" id="AUs-0r-bSW"/>
+                                <constraint firstItem="4wb-iW-XkZ" firstAttribute="leading" secondItem="2A1-AD-tqc" secondAttribute="leading" constant="16" id="Bt6-oP-yvk"/>
+                                <constraint firstItem="4wb-iW-XkZ" firstAttribute="top" secondItem="2A1-AD-tqc" secondAttribute="top" constant="16" id="RSe-o1-TD2"/>
+                                <constraint firstAttribute="bottom" secondItem="4wb-iW-XkZ" secondAttribute="bottom" constant="16" id="iyZ-sE-rHL"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="rtCornerRadius">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="TextFieldBorder"/>
+                    <constraints>
+                        <constraint firstItem="Ab9-Cr-9oe" firstAttribute="height" secondItem="0Vh-bY-gID" secondAttribute="height" id="7kf-Og-cd4"/>
+                        <constraint firstItem="2A1-AD-tqc" firstAttribute="leading" secondItem="0Vh-bY-gID" secondAttribute="leading" id="EiI-Cq-z5r"/>
+                        <constraint firstItem="Ab9-Cr-9oe" firstAttribute="bottom" secondItem="kjo-DQ-zfD" secondAttribute="bottom" id="Gre-zl-V97"/>
+                        <constraint firstItem="BOY-VX-x9L" firstAttribute="trailing" secondItem="Ab9-Cr-9oe" secondAttribute="trailing" constant="-16" id="Qwx-gH-vTQ"/>
+                        <constraint firstAttribute="bottom" secondItem="2A1-AD-tqc" secondAttribute="bottom" id="W1m-nO-n7W"/>
+                        <constraint firstItem="Ab9-Cr-9oe" firstAttribute="width" secondItem="0Vh-bY-gID" secondAttribute="width" id="WCc-gE-8Xx"/>
+                        <constraint firstItem="Ab9-Cr-9oe" firstAttribute="trailing" secondItem="kjo-DQ-zfD" secondAttribute="trailing" id="b4A-yN-UR1"/>
+                        <constraint firstItem="Ab9-Cr-9oe" firstAttribute="top" secondItem="kjo-DQ-zfD" secondAttribute="top" id="iW7-0K-a1D"/>
+                        <constraint firstItem="BOY-VX-x9L" firstAttribute="bottom" secondItem="2A1-AD-tqc" secondAttribute="top" constant="-8" id="uuZ-rk-ePk"/>
+                        <constraint firstItem="Ab9-Cr-9oe" firstAttribute="leading" secondItem="kjo-DQ-zfD" secondAttribute="leading" id="wo2-uM-gmX"/>
+                        <constraint firstAttribute="trailing" secondItem="2A1-AD-tqc" secondAttribute="trailing" id="xDX-0Z-Sw6"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="kjo-DQ-zfD"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="0Vh-bY-gID"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="TextFieldBorder"/>
+            <constraints>
+                <constraint firstItem="ex7-44-HY2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Idl-YW-ec8"/>
+                <constraint firstItem="ex7-44-HY2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="chB-6R-fYM"/>
+                <constraint firstAttribute="bottom" secondItem="ex7-44-HY2" secondAttribute="bottom" id="kAQ-bM-eoW"/>
+                <constraint firstItem="ex7-44-HY2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="voi-x7-QFO"/>
+            </constraints>
+            <point key="canvasLocation" x="4" y="127"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="location" catalog="system" width="128" height="119"/>
+        <image name="location-06" width="16" height="16"/>
+        <namedColor name="Main">
+            <color red="0.93333333333333335" green="0.47843137254901963" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextFieldBorder">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

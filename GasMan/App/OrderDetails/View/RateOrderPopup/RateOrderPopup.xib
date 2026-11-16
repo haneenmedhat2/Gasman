@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RateOrderPopup" customModule="GasMan" customModuleProvider="target">
+            <connections>
+                <outlet property="backView" destination="ROP-backdrop" id="ROP-backdrop-conn"/>
+                <outlet property="commentTextView" destination="ROP-comment" id="ROP-comment-conn"/>
+                <outlet property="contentView" destination="ROP-content" id="ROP-content-conn"/>
+                <outlet property="nameLabel" destination="ROP-name" id="ROP-name-conn"/>
+                <outlet property="profileImageView" destination="ROP-avatar" id="ROP-avatar-conn"/>
+                <outlet property="ratingRowsStack" destination="ROP-rows-stack" id="ROP-rows-conn"/>
+                <outlet property="view" destination="ROP-root" id="ROP-root-conn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ROP-root">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROP-backdrop" userLabel="BackView">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROP-content" userLabel="ContentView">
+                    <rect key="frame" x="0.0" y="513" width="393" height="339"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="307" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ROP-container" userLabel="ContanerStackView">
+                            <rect key="frame" x="16" y="16" width="361" height="307"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROP-avatar">
+                                    <rect key="frame" x="150.66666666666666" y="0.0" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="ROP-avatar-h"/>
+                                        <constraint firstAttribute="width" constant="60" id="ROP-avatar-w"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <real key="value" value="36"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROP-name">
+                                    <rect key="frame" x="0.0" y="76" width="361" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ROP-rows-stack">
+                                    <rect key="frame" x="0.0" y="142" width="361" height="50"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </stackView>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ROP-comment">
+                                    <rect key="frame" x="0.0" y="208" width="361" height="33"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="tintColor" name="Main"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROP-confirm-btn" customClass="MainButton" customModule="GasMan" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="257" width="361" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="ROP-confirm-h"/>
+                                        <constraint firstAttribute="width" constant="361" id="ROP-confirm-w"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <state key="normal" title="confirm"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="rating"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="didTapConfirm:" destination="-1" eventType="touchUpInside" id="ROP-confirm-action"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="ROP-comment" secondAttribute="trailing" id="Bvv-2r-DMc"/>
+                                <constraint firstItem="ROP-name" firstAttribute="leading" secondItem="ROP-container" secondAttribute="leading" id="C57-eh-Tc3"/>
+                                <constraint firstItem="ROP-rows-stack" firstAttribute="leading" secondItem="ROP-container" secondAttribute="leading" id="QNW-Hp-8L5"/>
+                                <constraint firstItem="ROP-comment" firstAttribute="leading" secondItem="ROP-container" secondAttribute="leading" id="TKR-Hf-wfo"/>
+                                <constraint firstAttribute="trailing" secondItem="ROP-name" secondAttribute="trailing" id="UWl-4k-9e7"/>
+                                <constraint firstItem="ROP-confirm-btn" firstAttribute="leading" secondItem="ROP-container" secondAttribute="leading" id="fwl-VD-Yed"/>
+                                <constraint firstAttribute="trailing" secondItem="ROP-confirm-btn" secondAttribute="trailing" id="l4i-my-FMC"/>
+                                <constraint firstAttribute="trailing" secondItem="ROP-rows-stack" secondAttribute="trailing" id="sAx-VS-fH6"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="ROP-container" secondAttribute="bottom" constant="16" id="Vb5-yO-xAH"/>
+                        <constraint firstItem="ROP-container" firstAttribute="leading" secondItem="ROP-content" secondAttribute="leading" constant="16" id="YEc-CC-t09"/>
+                        <constraint firstAttribute="trailing" secondItem="ROP-container" secondAttribute="trailing" constant="16" id="qoq-7L-kHu"/>
+                        <constraint firstItem="ROP-container" firstAttribute="top" secondItem="ROP-content" secondAttribute="top" constant="16" id="tJX-K3-djl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="ROP-safe"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ROP-backdrop" secondAttribute="bottom" id="ROP-bd-bot"/>
+                <constraint firstItem="ROP-backdrop" firstAttribute="leading" secondItem="ROP-root" secondAttribute="leading" id="ROP-bd-lead"/>
+                <constraint firstItem="ROP-backdrop" firstAttribute="top" secondItem="ROP-root" secondAttribute="top" id="ROP-bd-top"/>
+                <constraint firstAttribute="trailing" secondItem="ROP-backdrop" secondAttribute="trailing" id="ROP-bd-trail"/>
+                <constraint firstItem="ROP-content" firstAttribute="trailing" secondItem="ROP-safe" secondAttribute="trailing" id="RPO-9E-afl"/>
+                <constraint firstAttribute="bottom" secondItem="ROP-content" secondAttribute="bottom" id="VLB-kw-JMe"/>
+                <constraint firstItem="ROP-content" firstAttribute="leading" secondItem="ROP-safe" secondAttribute="leading" id="Xl6-ri-C84"/>
+            </constraints>
+            <point key="canvasLocation" x="0.0" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Main">
+            <color red="0.93333333333333335" green="0.47843137254901963" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

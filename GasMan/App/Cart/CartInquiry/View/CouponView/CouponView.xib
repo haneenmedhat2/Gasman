@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CouponView" customModule="GasMan" customModuleProvider="target">
+            <connections>
+                <outlet property="activateButton" destination="CV-btn" id="CV-btn-conn"/>
+                <outlet property="couponTextField" destination="CV-tf" id="CV-tf-conn"/>
+                <outlet property="inputContainerView" destination="CV-container" id="CV-cont-conn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="CV-root">
+            <rect key="frame" x="0.0" y="0.0" width="559" height="169"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CV-vstack" userLabel="VerticalStack">
+                    <rect key="frame" x="0.0" y="0.0" width="559" height="169"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CV-title" userLabel="TitleLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="559" height="117"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" name="mainDarkFontColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="add_coupon"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CV-container" userLabel="InputContainerView">
+                            <rect key="frame" x="0.0" y="125" width="559" height="44"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CV-row" userLabel="InputRowStack">
+                                    <rect key="frame" x="8" y="0.0" width="543" height="44"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CV-tf" userLabel="CouponTextField">
+                                            <rect key="frame" x="0.0" y="11" width="468" height="22"/>
+                                            <color key="tintColor" name="Main"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibPlaceholderLocKey" value="enter_coupon"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CV-btn" userLabel="ActivateButton">
+                                            <rect key="frame" x="468" y="8.6666666666666572" width="75" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="75" id="CV-btn-w"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <state key="normal" title="تفعيل">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="activate"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="didTapActivate:" destination="-1" eventType="touchUpInside" id="CV-btn-act"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="CV-cont-h"/>
+                                <constraint firstAttribute="bottom" secondItem="CV-row" secondAttribute="bottom" id="CV-row-bot"/>
+                                <constraint firstItem="CV-row" firstAttribute="leading" secondItem="CV-container" secondAttribute="leading" constant="8" id="CV-row-lead"/>
+                                <constraint firstItem="CV-row" firstAttribute="top" secondItem="CV-container" secondAttribute="top" id="CV-row-top"/>
+                                <constraint firstAttribute="trailing" secondItem="CV-row" secondAttribute="trailing" constant="8" id="CV-row-trail"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="CV-vstack" secondAttribute="bottom" id="CV-vs-bot"/>
+                <constraint firstItem="CV-vstack" firstAttribute="leading" secondItem="CV-root" secondAttribute="leading" id="CV-vs-lead"/>
+                <constraint firstItem="CV-vstack" firstAttribute="top" secondItem="CV-root" secondAttribute="top" id="CV-vs-top"/>
+                <constraint firstAttribute="trailing" secondItem="CV-vstack" secondAttribute="trailing" id="CV-vs-trail"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-40.458015267175568" y="-220.07042253521129"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Main">
+            <color red="0.93333333333333335" green="0.47843137254901963" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainDarkFontColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
